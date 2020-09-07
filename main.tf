@@ -1,5 +1,5 @@
 module "admin_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.12.0"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.19.2"
   namespace  = var.namespace
   stage      = var.stage
   name       = var.admin_name
@@ -9,7 +9,7 @@ module "admin_label" {
 }
 
 module "readonly_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.12.0"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.19.2"
   namespace  = var.namespace
   stage      = var.stage
   name       = var.readonly_name
