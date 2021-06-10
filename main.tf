@@ -1,5 +1,5 @@
 module "admin_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.19.2"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.24.1"
   namespace  = var.namespace
   stage      = var.stage
   name       = var.admin_name
@@ -9,7 +9,7 @@ module "admin_label" {
 }
 
 module "readonly_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.19.2"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.24.1"
   namespace  = var.namespace
   stage      = var.stage
   name       = var.readonly_name
@@ -190,9 +190,9 @@ data "aws_iam_policy_document" "assume_role_admin" {
   count = local.enabled ? 1 : 0
 
   statement {
-    actions   = ["sts:AssumeRole"]
+    actions = ["sts:AssumeRole"]
     resources = [
-      join("", aws_iam_role.admin.*.arn)]
+    join("", aws_iam_role.admin.*.arn)]
   }
 }
 
@@ -275,9 +275,9 @@ resource "aws_iam_policy" "allow_key_management_readonly" {
 
 data "aws_iam_policy_document" "assume_role_readonly" {
   statement {
-    actions   = ["sts:AssumeRole"]
+    actions = ["sts:AssumeRole"]
     resources = [
-      join("", aws_iam_role.readonly.*.arn)]
+    join("", aws_iam_role.readonly.*.arn)]
   }
 }
 
