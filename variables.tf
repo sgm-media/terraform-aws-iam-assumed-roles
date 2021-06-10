@@ -21,13 +21,13 @@ variable "delimiter" {
 }
 
 variable "attributes" {
-  type        = list
+  type        = list(any)
   default     = []
   description = "Additional attributes (e.g. `policy` or `role`)"
 }
 
 variable "tags" {
-  type        = map
+  type        = map(any)
   default     = {}
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)"
 }
@@ -45,13 +45,13 @@ variable "readonly_name" {
 }
 
 variable "admin_user_names" {
-  type        = list
+  type        = list(any)
   default     = []
   description = "Optional list of IAM user names to add to the admin group"
 }
 
 variable "readonly_user_names" {
-  type        = list
+  type        = list(any)
   default     = []
   description = "Optional list of IAM user names to add to the readonly group"
 }
